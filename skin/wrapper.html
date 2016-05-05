@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+{$header}
+<title>Telkom University Search Engine</title>
+{$description}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="QgoBcQh1N6hNfArQ2NtHztZVCMWbAdHIfDzP7tC05Vw" />
+<link rel="shortcut icon" href="./favicon.ico" />
+<link href="{$url}/style.css" rel="stylesheet" type="text/css" />
+<link href="{$url}/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="{$url}/css/bootstrap-responsive.css" />
+<script type="text/javascript" src="{$url}/js/jquery.js"></script>
+<script type="text/javascript" src="{$url}/js/jquery.tipsy.js"></script>
+<script type="text/javascript" src="{$url}/js/bootstrap.js"></script>
+<script type="text/javascript"> 
+
+$(document).ready(function() {
+	$('#search').keypress(function(x){if(x.keyCode==13){q=$(this).val();if(q!=this.defaultValue){document.location='/index.php?a=search&q='+escape(q)}}});
+	$('#search').focus(function(){if($(this).val()==this.defaultValue)$(this).val('')});
+	$('#search').blur(function(){if($(this).val()=='')$(this).val(this.defaultValue)});
+	
+	$('.button, .img_title').tipsy({gravity:'s', fade:1, html: true, opacity: 1, live: true});
+	
+	$('.sidebar_title').click(function(){
+        $(this).siblings(".sidebar_list").toggle('400');
+	});
+	
+	$('.search_item').click(function() {
+    $(this).addClass('search_highlight').siblings().removeClass('search_highlight');
+    $("#search_o").val($(this).html());
+	});
+	
+	$('.search_item_home').click(function() {
+		$(this).addClass('active').siblings().removeClass('active');
+	});
+	$('.searchValue').click(function() {
+		$("#search_h").val($(this).html().toLowerCase());
+	});
+
+});
+</script>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="{$url}">Caritahu</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="search_item_home{$activeWeb}"><a href="{$urlWeb}" class="searchValue">Web</a></li>
+              <li class="search_item_home{$activeImages}"><a href="{$urlImages}" class="searchValue">Gambar</a></li>
+              <li class="search_item_home{$activeVideos}"><a href="{$urlVideos}" class="searchValue">Videos</a></li>
+			  <li class="search_item_home{$activeNews}"><a href="{$urlNews}" class="searchValue">Berita</a></li>
+            </ul>
+			<a href="{$url}/index.php?a=preferences" class="btn btn-inverse pull-right"><i class="icon-cog icon-white"></i></a>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+<div class="{$contentClass}">
+	{$content}
+</div>
+<div class="container">
+	<div class="span12"><br /><br /><br /><br /><br /><br /><br /><br /><br />Copyright &copy; 2016 DaniAgung. All rights reserved.
+	<a href="{$url}/index.php?a=admin">Admin</a>
+	</div>
+</div>
+</body>
+</html>

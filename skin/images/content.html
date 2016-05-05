@@ -1,0 +1,40 @@
+<script type="text/javascript">
+	$(function() {
+		//More Button
+		$('.btn-primary').live("click",function() {
+			var URL = $(this).attr("id");
+			$(".morebox").html('<img src="{$url}/images/preloader.gif" />');
+
+			$.ajax({
+				type: "POST",
+				url: "{$url}/requests/images.php",
+				data: "loadmore="+ encodeURIComponent(URL) + "&u={$query}", 
+				cache: false,
+				success: function(html) {
+					$(".morebox").remove();
+					$("#loadmore").append(html);
+				}
+			});
+		
+		return false;
+		});
+	});
+</script>
+<div class="results_c">
+	<form action="" method="get" class="input-append">
+		<input type="hidden" name="a" value="{$search}" id="search_o" />
+		<input type="text" name="q" value="{$query}" class="span6" />
+		<button type="submit" value="" class="btn">Search</button>
+	</form>
+	<br />
+	{$sidebar}
+	<div class="resNum">{$resNumber}</div>
+	<div class="results_web" id="loadmore">
+		<div class="thumbnails">
+			{$rows}
+		</div>
+	<div class="morebox" {$hide}>
+		<button type="button" class="btn btn-primary" id="{$idlive}">Selanjutnya</button>
+	</div>
+	</div>
+</div>

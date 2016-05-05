@@ -1,0 +1,46 @@
+<div class="results_c">
+	<form action="{$url}/index.php?a=preferences" method="POST" class="form-horizontal">
+		<h4>Safe Search</h4>
+		<label class="radio">
+			<input type="radio" name="adult" id="off" value="Off" {$off} />
+			<strong>Off</strong> - Don't filter adult content from your search results.
+		</label>
+		<label class="radio">
+			<input type="radio" name="adult" id="moderate" value="Moderate" {$moderate} />
+			<strong>Moderate</strong> - Filter adult images and videos but not text from your search results.
+		</label>
+		<label class="radio">
+			<input type="radio" name="adult" id="strict" value="Strict" {$strict} />
+			<strong>Strict</strong> - Filter out adult text, images, and videos from your search results.
+		</label>
+		
+		<hr>
+		
+		<h4>Highlight keywords</h4>
+		<label class="radio">
+			<input type="radio" name="highlight" id="highOff" value=" " {$highOff} />
+			<strong>Off</strong> - Don't display the searched keywords highlighed.
+		</label>
+		<label class="radio">
+			<input type="radio" name="highlight" id="highOn" value="EnableHighlighting" {$highOn} />
+			<strong>On</strong> - Display the searched keywords highlighted.
+		</label>
+		
+		<hr>
+		
+		<h4>Results in new tab</h4>
+		<label class="radio">
+			<input type="radio" name="link" id="linkOff" value="_self" {$linkOff} />
+			<strong>Off</strong> - Don't open the results in a new tab.
+		</label>
+		<label class="radio">
+			<input type="radio" name="link" id="linkOn" value="_blank" {$linkOn} />
+			<strong>On</strong> - Open the results in a new tab.
+		</label>
+		
+		<hr>
+		
+		<button type="submit" class="btn btn-primary">Save Changes</button>
+		
+	</form>
+</div>
