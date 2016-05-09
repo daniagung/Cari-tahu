@@ -2,7 +2,8 @@
 SQLyog Trial v12.2.1 (64 bit)
 MySQL - 5.5.45-log : Database - caritahu
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -29,7 +30,8 @@ CREATE TABLE `admin` (
 
 /*Data for the table `admin` */
 
-insert  into `admin`(`id`,`username`,`password`) values 
+insert  into `admin`(`id`,`username`,`password`) values 
+
 (1,'admin','dde424ea40cc8e2599259d5315f40138');
 
 /*Table structure for table `settings` */
@@ -46,8 +48,9 @@ CREATE TABLE `settings` (
 
 /*Data for the table `settings` */
 
-insert  into `settings`(`title`,`app`,`ad1`,`ad2`,`ad3`) values 
-('Tel-U Search','qnJUV50QDVatJzvybgW6nrk6PzrgutTVeYgQE013BDQ','<a href=\"?a=web&q=pricop+alexandru\">Pricop Alexandru</a> • <a href=\"?a=web&q=phpDolphin\">phpDolphin - Social Network Platform</a> • <a href=\"?a=web&q=phpSound\">phpSound - Music Sharing Platform</a> • <a href=\"?a=web&q=codecanyon\">CodeCanyon</a>','That you can write what ever you want here, even html <strong>bolded</strong>, or <i>italic</i> if you like it more... :)','<a href=\"?a=images&q=Transfagarasan\">Transfagarasan (images)</a> • <a href=\"?a=videos&q=funny+dogs\">Funny Dogs (video)</a> • <a href=\"?a=videos&q=sky+diving\">Sky Diving (video)</a> • <a href=\"?a=videos&q=Birth+of+a+Black+Hole\">Birth of a Black Hole (video)</a>');
+insert  into `settings`(`title`,`app`,`ad1`,`ad2`,`ad3`) values 
+
+('Tel-U Search','qnJUV50QDVatJzvybgW6nrk6PzrgutTVeYgQE013BDQ');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
